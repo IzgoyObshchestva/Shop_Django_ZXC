@@ -1,12 +1,12 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block title %}Payment Process{% endblock title %}
+{% block title %}Процесс оплаты{% endblock title %}
 
 {% block content %}
     <div class="window">
         <h2 class="pay-title">
-            Payment
+            Оплата
         </h2>
         <div class="pay-card d-flex">
             <div class="cart-cardsproc">
@@ -21,7 +21,7 @@
                                     <p>{{ product.name }}</p>
                                 </div>
                                 <div class="cart-card-q">
-                                    <p>Quantity: {{ item.quantity }}</p>
+                                    <p>Количество: {{ item.quantity }}</p>
                                 </div>
                             </div>
                             <form action="{% url "cart:cart_remove" product.id %}" method="post">
@@ -31,11 +31,11 @@
                             <div class="cart-card-price">
                                 {% if product.discount %}
                                     <div class="cart-price">
-                                        <p class="line opac">$ {{ product.price }}</p>
-                                        <p class="cart-total-price-ots">$ {{ product.sell_price }}</p>
+                                        <p class="line opac">{{ product.price }} ₽</p>
+                                        <p class="cart-total-price-ots">{{ product.sell_price }} ₽</p>
                                     </div>
                                 {% else %}
-                                    <p class="cart-total-price">$ {{ product.price }}</p>
+                                    <p class="cart-total-price">{{ product.price }} ₽</p>
                                 {% endif %}
                             </div>
                         </div>
